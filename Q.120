@@ -1,0 +1,71 @@
+Write a program to Develop complete mini 
+project using arrays, strings and functions.
+
+#include <stdio.h>
+
+void addStudent(int roll[], char name[][50], float marks[], int n)
+{
+    int i;
+
+    for(i = 0; i < n; i++)
+    {
+        printf("\nEnter details of Student %d\n", i + 1);
+
+        printf("Roll Number: ");
+        scanf("%d", &roll[i]);
+
+        printf("Name: ");
+        scanf("%s", name[i]);
+
+        printf("Marks: ");
+        scanf("%f", &marks[i]);
+    }
+}
+
+void displayStudent(int roll[], char name[][50], float marks[], int n)
+{
+    int i;
+
+    printf("\n----- Student Records -----\n");
+
+    for(i = 0; i < n; i++)
+    {
+        printf("\nStudent %d\n", i + 1);
+        printf("Roll Number : %d\n", roll[i]);
+        printf("Name        : %s\n", name[i]);
+        printf("Marks       : %.2f\n", marks[i]);
+    }
+}
+
+int main()
+{
+    int roll[10], n, choice;
+    float marks[10];
+    char name[10][50];
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    printf("\n===== Student Management Menu =====\n");
+    printf("1. Add Student Records\n");
+    printf("2. Display Student Records\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            addStudent(roll, name, marks, n);
+            displayStudent(roll, name, marks, n);
+            break;
+
+        case 2:
+            printf("No records available. Please add records first.");
+            break;
+
+        default:
+            printf("Invalid Choice");
+    }
+
+    return 0;
+}
