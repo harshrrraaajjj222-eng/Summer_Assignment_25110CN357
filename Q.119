@@ -1,0 +1,47 @@
+Write a program to Create mini employee 
+management system.
+
+#include <stdio.h>
+
+int main()
+{
+    int empId, choice;
+    char name[50];
+    float salary;
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &empId);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", name);
+
+    printf("Enter Salary: ");
+    scanf("%f", &salary);
+
+    printf("\n===== Employee Menu =====\n");
+    printf("1. Display Details\n");
+    printf("2. Increase Salary\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
+    {
+        case 1:
+            printf("\n----- Employee Details -----\n");
+            printf("Employee ID   : %d\n", empId);
+            printf("Employee Name : %s\n", name);
+            printf("Salary        : %.2f\n", salary);
+            break;
+
+        case 2:
+            salary = salary + 5000;
+            printf("\nSalary Updated Successfully.\n");
+            printf("New Salary = %.2f\n", salary);
+            break;
+
+        default:
+            printf("Invalid Choice");
+    }
+
+    return 0;
+}
